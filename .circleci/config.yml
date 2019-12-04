@@ -1,0 +1,33 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - master
+  - releases/*
+  - dev
+jobs:
+  - job: build_packer
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - script: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+        displayName: 'prepare for deploy'
+      - task: CopyFiles@1
+        inputs:
+          contents: |
+            deploy.sh
+          targetFolder: $(Build.ArtifactStagingDirectory)
+      #      - task: AzureFileCopy@3
+      #        inputs:
+      #          sourcePath: 'webapp/target/ROOT.war'
+      #          azureSubscription: 'demo'
+      #          destination: 'AzureBlob'
+      #          storage: 'myc339'
+      #          containerName: 'demo'
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathToPublish: $(Build.ArtifactStagingDirectory)
+          artifactName: drop
