@@ -12,11 +12,14 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     steps:
+      - script: |
+          sudo apt-get install zip
+          zip -r functions.zip azure_functions.csproj HttpFunction.cs
+        displayName: 'install zip and zip files'
       - task: CopyFiles@1
         inputs:
           contents: |
-            deploy.sh
-            HttpFunction.cs
+            functions.zip
           targetFolder: $(Build.ArtifactStagingDirectory)
       - task: PublishBuildArtifacts@1
         inputs:
