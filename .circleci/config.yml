@@ -10,7 +10,7 @@ trigger:
 jobs:
   - job: build_packer
     pool:
-      vmImage: 'windows-latest'
+      vmImage: 'ubuntu-latest'
     steps:
       - script: |
           sudo apt-get install zip
