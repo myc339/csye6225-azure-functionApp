@@ -18,7 +18,7 @@ namespace azure_functions
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
+            log.LogInformation("C# HTTP trigger function processed a response.");
             string name = req.Query["name"];
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
