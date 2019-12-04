@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - master
+  - releases/*
+  - dev
+jobs:
+  - job: build_packer
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - task: CopyFiles@1
+        inputs:
+          contents: |
+            deploy.sh
+            HttpFunction.cs
+          targetFolder: $(Build.ArtifactStagingDirectory)
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathToPublish: $(Build.ArtifactStagingDirectory)
+          artifactName: drop
