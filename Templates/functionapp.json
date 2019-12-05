@@ -41,15 +41,6 @@
   },
   "resources": [
     {
-      "type": "Microsoft.EventGrid/topics",
-      "apiVersion": "2018-05-01-preview",
-      "name": "[parameters('name')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "inputSchema": "EventGridSchema"
-      }
-    },
-    {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('storageAccountName')]",
       "apiVersion": "2016-12-01",
@@ -57,6 +48,15 @@
       "kind": "Storage",
       "sku": {
         "name": "[parameters('storageAccountType')]"
+      }
+    },
+    {
+      "type": "Microsoft.EventGrid/topics",
+      "apiVersion": "2018-05-01-preview",
+      "name": "[parameters('name')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "inputSchema": "EventGridSchema"
       }
     },
     {
