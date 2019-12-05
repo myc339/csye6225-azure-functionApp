@@ -7,9 +7,26 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 
+[assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
 namespace azure_functions
 {
+    public class Startup : FunctionsStartup
+    {
+        public override void Configure(IFunctionsHostBuilder builder)
+        {
+            builder.Services.AddHttpClient();
+            builder.addEventGrid();
+            builder.addSendGrid();
+            builder.Services.AddSingleton((s) => {
+                return new MyService();
+            });
+
+            builder.Services.AddSingleton<ILoggerProvider, MyLoggerProvider>();
+        }
+    }
     public static class EventGridTrigger
     {
         [FunctionName("EventGridTrigger")]

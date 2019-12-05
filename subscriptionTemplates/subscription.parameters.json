@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "endpoint": {
-      "value": "https://sendgridrelease.azurewebsites.net"
+      "value": "https://SendGridRelease3.azurewebsites.net/runtime/webhooks/eventgrid?functionName=EventGridTrigger&code={systemkey}"
     }
   }
 }
