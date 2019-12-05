@@ -4,9 +4,6 @@
   "parameters": {
     "appName": {
       "value": "SendGridRelease"
-    },
-    "Email": {
-      "value": "Test@gmail.com"
     }
   }
 }

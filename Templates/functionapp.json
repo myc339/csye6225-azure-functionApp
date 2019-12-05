@@ -21,12 +21,6 @@
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
         "description": "Location for all resources."
-      },
-      "Email": {
-        "type": "string",
-        "metadata": {
-          "description": "send grid account"
-        }
       }
     },
     "runtime": {
@@ -88,7 +82,7 @@
         "publisher": "Sendgrid"
       },
       "properties": {
-        "email": "[parameters('Email')]",
+        "email": "chen.yum@husky.neu.edu",
         "password": "Test12345678",
         "acceptMarketingEmails": true
       }
