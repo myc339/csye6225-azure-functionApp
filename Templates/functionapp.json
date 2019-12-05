@@ -42,7 +42,7 @@
   "resources": [
     {
       "type": "Microsoft.EventGrid/topics",
-      "apiVersion": "2020-01-01-preview",
+      "apiVersion": "2018-05-01-preview",
       "name": "[parameters('name')]",
       "location": "[parameters('location')]",
       "properties": {
