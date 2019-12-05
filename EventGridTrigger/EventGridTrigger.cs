@@ -17,12 +17,8 @@ namespace azure_functions
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            builder.Services.AddHttpClient();
             builder.addEventGrid();
             builder.addSendGrid();
-            builder.Services.AddSingleton((s) => {
-                return new MyService();
-            });
 
             builder.Services.AddSingleton<ILoggerProvider, MyLoggerProvider>();
         }
