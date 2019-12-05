@@ -22,6 +22,8 @@ namespace azure_functions
         {
             log.LogInformation(eventGridEvent.Data.ToString());
              message = new SendGridMessage();
+             message.AddTo("chen.yum39@gmail.com");
+             message.SetFrom(new EmailAddress("noreply@myc39.me"));
              message.SetSubject("Message Via Azure Event Grid");
                 // message.PlainTextContent= eventGridEvent.Data.ToString();
               message.AddContent("text/plain", "hello world");
