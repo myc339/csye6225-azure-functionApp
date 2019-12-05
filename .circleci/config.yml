@@ -19,6 +19,8 @@ jobs:
       - task: CopyFiles@1
         inputs:
           contents: |
+            Templates/functionapp.json
+            Templates/functionapp.parameters.json
             functions.zip
           targetFolder: $(Build.ArtifactStagingDirectory)
       - task: PublishBuildArtifacts@1
