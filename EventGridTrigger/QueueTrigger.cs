@@ -1,16 +1,13 @@
-using System;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Extensions.Logging;
-
-namespace EventGridTrigger
+#r "Microsoft.Azure.EventGrid"
+#r "SendGrid"
+using Microsoft.Azure.EventGrid.Models;
+using SendGrid.Helpers.Mail;
+using System.Net.Http;
+public static void Run(EventGridEvent eventGridEvent, ILogger log,out SendGridMessage message)
 {
-    public static class QueueTrigger
-    {
-        [FunctionName("QueueTrigger")]
-        public static void Run([QueueTrigger("myqueue-items", Connection = "myc339")]string myQueueItem, ILogger log)
-        {
-            log.LogInformation($"C# Queue trigger function processed: {myQueueItem}dsdsdasdasd");
-        }
-    }
+    log.LogInformation(eventGridEvent.Data.ToString());
+    message = new SendGridMessage();
+    message.SetSubject("Message Via Azure Event Grid");
+    // message.PlainTextContent= eventGridEvent.Data.ToString();
+     message.AddContent("text/plain", "hello world");
 }
