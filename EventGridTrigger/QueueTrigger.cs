@@ -1,5 +1,5 @@
-#r "Microsoft.Azure.EventGrid"
-#r "SendGrid"
+//#r "Microsoft.Azure.EventGrid"
+//#r "SendGrid"
 using Microsoft.Azure.EventGrid.Models;
 using SendGrid.Helpers.Mail;
 using System.Net.Http;
