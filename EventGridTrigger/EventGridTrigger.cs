@@ -11,16 +11,14 @@ using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 using Microsoft.Azure.WebJobs.Host;
 
 
-[assembly: WebJobsStartup(typeof(MySimpleBindingStartup))]
-namespace MyFirstCustomBindingLibrary
+[assembly: WebJobsStartup(typeof(CustomExtensionWebJobsStartup))]
+
+public class CustomExtensionWebJobsStartup : IWebJobsStartup
 {
-    public class MySimpleBindingStartup : IWebJobsStartup
+    public void Configure(IWebJobsBuilder builder)
     {
-        public void Configure(IWebJobsBuilder builder)
-        {
-            builder.AddMyEventGrid();
-            builder.AddSendGrid();
-        }
+        builder.AddEventGrid();
+        builder.SendGrid();
     }
 }
 namespace azure_functions
