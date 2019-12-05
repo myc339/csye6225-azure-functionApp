@@ -1,5 +1,5 @@
-#r "Microsoft.Azure.EventGrid"
-#r "Microsoft.Azure.SendGrid"
+//#r "Microsoft.Azure.EventGrid"
+//#r "Microsoft.Azure.SendGrid"
 using Microsoft.Azure.EventGrid.Models;
 using Microsoft.Extensions.Logging;
 
