@@ -23,15 +23,9 @@
         "description": "Location for all resources."
       },
       "accounts_sendEmail_password": {
-        "type": "SecureString",
-        "defaultValue": "Sendmail123"
-      },
-      "accounts_sendEmail_acceptMarketingEmails": {
-        "type": "Bool",
-        "defaultValue": true
+        "type": "SecureString"
       },
       "accounts_sendEmail_name": {
-        "defaultValue": "sendEmail",
         "type": "String"
       },
       "account_mail": {
@@ -99,7 +93,7 @@
       "properties": {
         "email": "[parameters('account_mail')]",
         "password": "[parameters('accounts_sendEmail_password')]",
-        "acceptMarketingEmails": "[parameters('accounts_sendEmail_acceptMarketingEmails')]"
+        "acceptMarketingEmails": true
       }
     },
     {
