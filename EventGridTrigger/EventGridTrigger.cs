@@ -18,7 +18,7 @@ namespace azure_functions
     public static class EventGridTrigger
     {
         [FunctionName("EventGridTrigger")]
-        public static void Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log,SendGrid(ApiKey = "GridKey") out SendGridMessage message)
+        public static void Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log,[SendGrid(ApiKey = "GridKey")] out SendGridMessage message)
         {
             log.LogInformation(eventGridEvent.Data.ToString());
              message = new SendGridMessage();
