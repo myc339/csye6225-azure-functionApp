@@ -51,12 +51,6 @@
       }
     },
     {
-      "name": "[variables('functionAppName')]",
-      "type": "Microsoft.EventGrid/topics",
-      "location": "[parameters('location')]",
-      "apiVersion": "2018-01-01"
-    },
-    {
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2015-04-01",
       "name": "[variables('hostingPlanName')]",
