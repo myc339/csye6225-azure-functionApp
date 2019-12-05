@@ -5,7 +5,7 @@
     "appName": {
       "value": "SendGridRelease"
     },
-    "account_mail": {
+    "Email": {
       "value": "Test@gmail.com"
     }
   }

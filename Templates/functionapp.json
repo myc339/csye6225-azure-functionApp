@@ -22,7 +22,7 @@
       "metadata": {
         "description": "Location for all resources."
       },
-      "account_mail": {
+      "Email": {
         "type": "string",
         "metadata": {
           "description": "send grid account"
@@ -88,7 +88,7 @@
         "publisher": "Sendgrid"
       },
       "properties": {
-        "email": "[parameters('account_mail')]",
+        "email": "[parameters('Email')]",
         "password": "Test12345678",
         "acceptMarketingEmails": true
       }
