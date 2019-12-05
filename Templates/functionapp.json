@@ -22,9 +22,6 @@
       "metadata": {
         "description": "Location for all resources."
       },
-      "accounts_sendEmail_name": {
-        "type": "String"
-      },
       "account_mail": {
         "type": "String"
       }
@@ -79,7 +76,7 @@
     {
       "type": "Sendgrid.Email/accounts",
       "apiVersion": "2015-01-01",
-      "name": "[parameters('accounts_sendEmail_name')]",
+      "name": "TestEmailSend",
       "location": "eastus",
       "plan": {
         "name": "free",

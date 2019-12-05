@@ -7,10 +7,6 @@
     },
     "account_mail": {
       "value": ""
-    },
-    "accounts_sendEmail_name":{
-      "value": "TestMail"
     }
-
   }
 }
