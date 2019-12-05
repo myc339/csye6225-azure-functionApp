@@ -23,7 +23,10 @@
         "description": "Location for all resources."
       },
       "account_mail": {
-        "type": "String"
+        "type": "string",
+        "metadata": {
+          "description": "send grid account"
+        }
       }
     },
     "runtime": {
