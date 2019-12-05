@@ -24,7 +24,7 @@
       },
       "inputSchema": {
         "type": "String",
-        "defaultValue": "Event Grid Schema"
+        "defaultValue": "EventGridSchema"
       },
       "accounts_sendEmail_password": {
         "type": "SecureString",
