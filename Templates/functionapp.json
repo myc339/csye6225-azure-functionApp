@@ -30,6 +30,19 @@
       "metadata": {
         "description": "The language worker runtime to load in the function app."
       }
+    },
+    "eventSubName": {
+      "type": "string",
+      "defaultValue": "subToResources",
+      "metadata": {
+        "description": "The name of the event subscription to create."
+      }
+    },
+    "endpoint": {
+      "type": "string",
+      "metadata": {
+        "description": "The URL for the WebHook to receive events. Create your own endpoint for events."
+      }
     }
   },
   "variables": {
@@ -40,6 +53,25 @@
     "functionWorkerRuntime": "[parameters('runtime')]"
   },
   "resources": [
+    {
+      "type": "Microsoft.EventGrid/eventSubscriptions",
+      "name": "[parameters('eventSubName')]",
+      "apiVersion": "2018-01-01",
+      "properties": {
+        "destination": {
+          "endpointType": "WebHook",
+          "properties": {
+            "endpointUrl": "[parameters('endpoint')]"
+          }
+        },
+        "filter": {
+          "subjectBeginsWith": "",
+          "subjectEndsWith": "",
+          "isSubjectCaseSensitive": false,
+          "includedEventTypes": ["All"]
+        }
+      }
+    },
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('storageAccountName')]",

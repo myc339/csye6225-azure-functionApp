@@ -4,6 +4,11 @@
   "parameters": {
     "appName": {
       "value": "SendGridRelease4"
+    },
+    "endpoint": {
+      "value": "https://sendgridrelease4.azurewebsites.net/runtime/webhooks/EventGridTrigger"
     }
   }
 }
+
+
