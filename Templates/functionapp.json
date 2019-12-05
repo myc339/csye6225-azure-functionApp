@@ -53,7 +53,7 @@
     {
       "type": "Microsoft.EventGrid/topics",
       "apiVersion": "2018-05-01-preview",
-      "name": "[parameters('name')]",
+      "name": "[parameters('appName')]",
       "location": "[parameters('location')]",
       "properties": {
         "inputSchema": "EventGridSchema"
