@@ -22,10 +22,6 @@
       "metadata": {
         "description": "Location for all resources."
       },
-      "inputSchema": {
-        "type": "String",
-        "defaultValue": "EventGridSchema"
-      },
       "accounts_sendEmail_password": {
         "type": "SecureString",
         "defaultValue": "Sendmail123"
@@ -65,7 +61,7 @@
       "name": "[parameters('name')]",
       "location": "[parameters('location')]",
       "properties": {
-        "inputSchema": "[parameters('inputSchema')]"
+        "inputSchema": "EventGridSchema"
       }
     },
     {
