@@ -22,9 +22,6 @@
       "metadata": {
         "description": "Location for all resources."
       },
-      "accounts_sendEmail_password": {
-        "type": "SecureString"
-      },
       "accounts_sendEmail_name": {
         "type": "String"
       },
@@ -92,7 +89,7 @@
       },
       "properties": {
         "email": "[parameters('account_mail')]",
-        "password": "[parameters('accounts_sendEmail_password')]",
+        "password": "Test12345678",
         "acceptMarketingEmails": true
       }
     },

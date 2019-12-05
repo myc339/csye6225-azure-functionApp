@@ -8,9 +8,6 @@
     "account_mail": {
       "value": ""
     },
-    "accounts_sendEmail_password": {
-      "value": "Sendmail123"
-    },
     "accounts_sendEmail_name":{
       "value": "TestMail"
     }
