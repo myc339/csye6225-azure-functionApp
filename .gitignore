@@ -3,7 +3,8 @@
 
 # Azure Functions localsettings file
 local.settings.json
-
+.vscode
+.circleci
 # User-specific files
 *.suo
 *.user
