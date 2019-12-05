@@ -1,6 +1,11 @@
 {
   "bindings": [
     {
+      "type": "eventGridTrigger",
+      "name": "SendGridRelease3",
+      "direction": "in"
+    },
+    {
       "type": "sendGrid",
       "name": "message",
       "direction": "out",
