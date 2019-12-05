@@ -3,26 +3,13 @@
 using Microsoft.Azure.EventGrid.Models;
 using SendGrid.Helpers.Mail;
 using System.Net.Http;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.EventGrid;
-using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Extensions.Logging;
-using Microsoft.Azure.Functions.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection;
 
-[assembly: FunctionsStartup(typeof(azure_functions.Startup))]
+using Microsoft.Extensions.Logging;
+
+
 namespace azure_functions
 {
-    public class Startup : FunctionsStartup
-    {
-        public override void Configure(IFunctionsHostBuilder builder)
-        {
-            builder.addEventGrid();
-            builder.addSendGrid();
 
-            builder.Services.AddSingleton<ILoggerProvider, MyLoggerProvider>();
-        }
-    }
     public static class EventGridTrigger
     {
         [FunctionName("EventGridTrigger")]
