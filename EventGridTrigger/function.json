@@ -7,7 +7,7 @@
     },
     {
       "type": "sendGrid",
-      "name": "message",
+      "name": "$message",
       "direction": "out",
       "apiKey": "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",
       "from": "noreply@em6883.myc39.me",
