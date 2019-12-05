@@ -11,10 +11,10 @@ using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 using Microsoft.Azure.WebJobs.Host;
 
 
-
+[assembly: WebJobsStartup(typeof(CustomExtensionWebJobsStartup))]
 namespace azure_functions
 {
-    [assembly: WebJobsStartup(typeof(CustomExtensionWebJobsStartup))]
+
 
     public class CustomExtensionWebJobsStartup : IWebJobsStartup
     {
