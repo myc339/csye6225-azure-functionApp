@@ -111,6 +111,10 @@
             {
               "name": "FUNCTIONS_WORKER_RUNTIME",
               "value": "[variables('functionWorkerRuntime')]"
+            },
+            {
+              "name": "GridKey",
+              "value": "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"
             }
           ]
         }
