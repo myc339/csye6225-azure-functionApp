@@ -1,7 +1,0 @@
-{
-    "version": "Current",
-    "extensionBundle": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
-        "version": "3.0.10"
-    }
-}

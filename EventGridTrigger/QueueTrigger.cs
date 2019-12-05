@@ -8,7 +8,7 @@ namespace EventGridTrigger
     public static class QueueTrigger
     {
         [FunctionName("QueueTrigger")]
-        public static void Run([QueueTrigger("myqueue-items", Connection = "")]string myQueueItem, ILogger log)
+        public static void Run([QueueTrigger("myqueue-items", Connection = "myc339")]string myQueueItem, ILogger log)
         {
             log.LogInformation($"C# Queue trigger function processed: {myQueueItem}dsdsdasdasd");
         }
