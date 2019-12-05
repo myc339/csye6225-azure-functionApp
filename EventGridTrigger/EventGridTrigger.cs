@@ -11,19 +11,19 @@ using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 using Microsoft.Azure.WebJobs.Host;
 
 
-[assembly: WebJobsStartup(typeof(CustomExtensionWebJobsStartup))]
 
-public class CustomExtensionWebJobsStartup : IWebJobsStartup
-{
-    public void Configure(IWebJobsBuilder builder)
-    {
-        builder.AddEventGrid();
-        builder.SendGrid();
-    }
-}
 namespace azure_functions
 {
+    [assembly: WebJobsStartup(typeof(CustomExtensionWebJobsStartup))]
 
+    public class CustomExtensionWebJobsStartup : IWebJobsStartup
+    {
+        public void Configure(IWebJobsBuilder builder)
+        {
+            builder.AddEventGrid();
+            builder.SendGrid();
+        }
+    }
     public static class EventGridTrigger
     {
         [FunctionName("EventGridTrigger")]
