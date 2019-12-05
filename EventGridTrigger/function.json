@@ -1,0 +1,5 @@
+{
+  "type": "eventGridTrigger",
+  "name": "SendGridRelease4",
+  "direction": "in"
+}
