@@ -71,23 +71,6 @@
       }
     },
     {
-      "type": "Sendgrid.Email/accounts",
-      "apiVersion": "2015-01-01",
-      "name": "TestEmailSend",
-      "location": "eastus",
-      "plan": {
-        "name": "free",
-        "promotionCode": "",
-        "product": "sendgrid_azure",
-        "publisher": "Sendgrid"
-      },
-      "properties": {
-        "email": "chen.yum@husky.neu.edu",
-        "password": "Test12345678",
-        "acceptMarketingEmails": true
-      }
-    },
-    {
       "apiVersion": "2015-08-01",
       "type": "Microsoft.Web/sites",
       "name": "[variables('functionAppName')]",
