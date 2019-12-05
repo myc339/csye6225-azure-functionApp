@@ -3,6 +3,10 @@
 using Microsoft.Azure.EventGrid.Models;
 using SendGrid.Helpers.Mail;
 using System.Net.Http;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.EventGrid;
+using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Extensions.Logging;
 
 namespace azure_functions
 {
