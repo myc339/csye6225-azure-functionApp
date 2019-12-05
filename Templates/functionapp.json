@@ -21,6 +21,25 @@
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
         "description": "Location for all resources."
+      },
+      "inputSchema": {
+        "type": "String",
+        "defaultValue": "Event Grid Schema"
+      },
+      "accounts_sendEmail_password": {
+        "type": "SecureString",
+        "defaultValue": "Sendmail123"
+      },
+      "accounts_sendEmail_acceptMarketingEmails": {
+        "type": "Bool",
+        "defaultValue": true
+      },
+      "accounts_sendEmail_name": {
+        "defaultValue": "sendEmail",
+        "type": "String"
+      },
+      "account_mail": {
+        "type": "String"
       }
     },
     "runtime": {
@@ -41,6 +60,15 @@
   },
   "resources": [
     {
+      "type": "Microsoft.EventGrid/topics",
+      "apiVersion": "2020-01-01-preview",
+      "name": "[parameters('name')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "inputSchema": "[parameters('inputSchema')]"
+      }
+    },
+    {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('storageAccountName')]",
       "apiVersion": "2016-12-01",
@@ -59,6 +87,23 @@
         "name": "[variables('hostingPlanName')]",
         "computeMode": "Dynamic",
         "sku": "Dynamic"
+      }
+    },
+    {
+      "type": "Sendgrid.Email/accounts",
+      "apiVersion": "2015-01-01",
+      "name": "[parameters('accounts_sendEmail_name')]",
+      "location": "eastus",
+      "plan": {
+        "name": "free",
+        "promotionCode": "",
+        "product": "sendgrid_azure",
+        "publisher": "Sendgrid"
+      },
+      "properties": {
+        "email": "[parameters('account_mail')]",
+        "password": "[parameters('accounts_sendEmail_password')]",
+        "acceptMarketingEmails": "[parameters('accounts_sendEmail_acceptMarketingEmails')]"
       }
     },
     {

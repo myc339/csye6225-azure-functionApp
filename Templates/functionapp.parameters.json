@@ -4,6 +4,9 @@
   "parameters": {
     "appName": {
       "value": "SendGridRelease"
+    },
+    "account_mail": {
+      "value": ""
     }
   }
 }
