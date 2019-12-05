@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
+[assembly: FunctionsStartup(typeof(azure_functions.Startup))]
 namespace azure_functions
 {
     public class Startup : FunctionsStartup
